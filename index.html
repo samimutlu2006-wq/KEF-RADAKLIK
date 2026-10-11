@@ -24,12 +24,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <link rel="preload" as="image" type="image/webp" media="(max-width: 1023px)" href="assets/img/vitrin-mobil.webp">
-  <link rel="preload" as="image" type="image/webp" media="(min-width: 1024px)"
-        imagesrcset="assets/img/vitrin-genis-1600.webp 1600w, assets/img/vitrin-genis-2400.webp 2400w" imagesizes="100vw">
+  <!-- En üstteki fotoğraf her şeyden önce inmeye başlasın -->
+  <link rel="preload" as="image" type="image/avif" media="(max-width: 1023px)" fetchpriority="high"
+        imagesrcset="assets/img/vitrin-mobil-720.avif 720w, assets/img/vitrin-mobil-1080.avif 1080w, assets/img/vitrin-mobil-1200.avif 1200w, assets/img/vitrin-mobil-1600.avif 1600w" imagesizes="100vw">
+  <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" fetchpriority="high"
+        imagesrcset="assets/img/vitrin-genis-1200.avif 1200w, assets/img/vitrin-genis-1600.avif 1600w, assets/img/vitrin-genis-2400.avif 2400w" imagesizes="100vw">
+  <!-- Yazı tipi sayfayı bekletmeden arkadan yüklenir -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&amp;display=swap"></noscript>
 
   <script>document.documentElement.className = 'js';</script>
 
@@ -212,7 +216,7 @@
       background: var(--bg); color: var(--text);
       overflow: hidden;
     }
-    .hero-photo { position: relative; aspect-ratio: 1080 / 939; background: #1a1a1a; }
+    .hero-photo { position: relative; aspect-ratio: 1080 / 939; background: #1a1a1a url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAVABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDAQL/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBREEIQZBEjGB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQIA/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERMf/aAAwDAQACEQMRAD8AmLnhUWW1rX/Z0Zqph8q1sBHvcrcvG8bl40rVVWlxHRI1MsPh6uNVYvKWuwk9e4bKeJ6+QM2tO431EuPj+CqkpRWCPrqI6zAuR0D1PAsZtgHURIUCxl9xERD/2Q==') 50% 50% / cover no-repeat; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
     .hero-photo::after {
       content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -261,10 +265,9 @@
       background: #1a1a1a;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, .09), 0 28px 80px -24px rgba(224, 32, 42, .6);
     }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; background: #1a1a1a 50% 50% / cover no-repeat; }
     .slide.is-active { opacity: 1; }
     .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; }
-    .slide video { background: #2a2a24; }
     .hero-stage::after {
       content: ""; position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 26%);
@@ -298,7 +301,7 @@
 
     @media (min-width: 1024px) {
       .hero { display: flex; align-items: flex-end; min-height: clamp(640px, 100vh, 1000px); }
-      .hero-photo { position: absolute; inset: calc(var(--header-h) + env(safe-area-inset-top)) 0 0 0; aspect-ratio: auto; }
+      .hero-photo { position: absolute; inset: calc(var(--header-h) + env(safe-area-inset-top)) 0 0 0; aspect-ratio: auto; background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPABgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAD/8QAHxAAAgEFAAMBAAAAAAAAAAAAAQIDAAQFESEGEkFh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwAxc8IiVlMr/u6hmomHtGsgI+7pi5xtve43UUMaykcbVZYjDR2sUi3SJIWPOUbKeDl8gdiNNIN8qp18fZopKQICBzlVOp//2Q=='); background-position: 50% 0%; }
       .hero-photo img { object-position: 50% 0%; }
       .hero-photo::after {
         background:
@@ -356,7 +359,7 @@
       position: relative; isolation: isolate;
       width: 100%; max-width: 420px; margin-inline: auto;
       aspect-ratio: 9 / 16; border-radius: var(--radius-xl); overflow: hidden;
-      background: #1b1b19;
+      background: #1b1b19 50% 50% / cover no-repeat;
       box-shadow: 0 0 0 1px var(--card-line);
     }
     .tour video { width: 100%; height: 100%; object-fit: cover; }
@@ -425,7 +428,7 @@
     .products { display: grid; gap: 20px; }
     @media (min-width: 860px) { .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
     .product { border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; }
-    .product-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #202020; }
+    .product-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #202020 50% 50% / cover no-repeat; }
     .product-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .product-media.is-empty::after {
       content: "Büyükbaş fotoğrafı"; position: absolute; inset: 0;
@@ -682,11 +685,16 @@
       <!-- En üstteki fotoğraf. Masaüstünde geniş, mobilde ayrı kırpılmış hali yüklenir. -->
       <div class="hero-photo">
         <picture>
+          <source media="(min-width: 1024px)" type="image/avif" sizes="100vw"
+                  srcset="assets/img/vitrin-genis-1200.avif 1200w, assets/img/vitrin-genis-1600.avif 1600w, assets/img/vitrin-genis-2400.avif 2400w">
           <source media="(min-width: 1024px)" type="image/webp" sizes="100vw"
-                  srcset="assets/img/vitrin-genis-1600.webp 1600w, assets/img/vitrin-genis-2400.webp 2400w">
+                  srcset="assets/img/vitrin-genis-1200.webp 1200w, assets/img/vitrin-genis-1600.webp 1600w, assets/img/vitrin-genis-2400.webp 2400w">
           <source media="(min-width: 1024px)" sizes="100vw"
                   srcset="assets/img/vitrin-genis-1600.jpg 1600w, assets/img/vitrin-genis-2400.jpg 2400w">
-          <source type="image/webp" srcset="assets/img/vitrin-mobil.webp">
+          <source type="image/avif" sizes="100vw"
+                  srcset="assets/img/vitrin-mobil-720.avif 720w, assets/img/vitrin-mobil-1080.avif 1080w, assets/img/vitrin-mobil-1200.avif 1200w, assets/img/vitrin-mobil-1600.avif 1600w">
+          <source type="image/webp" sizes="100vw"
+                  srcset="assets/img/vitrin-mobil-720.webp 720w, assets/img/vitrin-mobil-1080.webp 1080w, assets/img/vitrin-mobil-1200.webp 1200w, assets/img/vitrin-mobil-1600.webp 1600w">
           <img src="assets/img/vitrin-mobil.jpg" width="1080" height="939" fetchpriority="high"
                alt="Kayseri'de adak ve kurbanlık satışı yapılan dükkânın tabelası ve önü">
         </picture>
@@ -720,21 +728,27 @@
           <!-- SLAYTLAR: yeni görsel eklerken data-duration (ms) ve data-label verin,
                aşağıdaki .story-bars içine bir .bar butonu ve .hero-texts içine bir metin bloğu ekleyin. -->
           <div class="slides">
-            <figure class="slide is-active" data-duration="6500" data-label="Tesisimiz">
+            <figure class="slide is-active" data-duration="6500" data-label="Tesisimiz" style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAYAA0DASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EACEQAAEEAQMFAAAAAAAAAAAAAAEAAgMEEQUSIQYVIkFh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABkRAQEBAAMAAAAAAAAAAAAAAAEAEQIhMf/aAAwDAQACEQMRAD8Az9agf3zFcESEcKK4+zEWNnBa/BW/ZYT1LHKR4BvLvSj1+I27jXRglobjIR02feeTzaYIt8pO5JNuZxzBENv1CEMFk8kL/9k=')">
               <picture>
-                <source srcset="assets/img/hero-tesis.webp" type="image/webp">
+                <source type="image/avif" sizes="(min-width: 1024px) 304px, (min-width: 440px) 400px, calc(100vw - 40px)"
+                        srcset="assets/img/hero-tesis-480.avif 480w, assets/img/hero-tesis-720.avif 720w, assets/img/hero-tesis-1080.avif 1080w">
+                <source type="image/webp" sizes="(min-width: 1024px) 304px, (min-width: 440px) 400px, calc(100vw - 40px)"
+                        srcset="assets/img/hero-tesis-480.webp 480w, assets/img/hero-tesis-720.webp 720w, assets/img/hero-tesis-1080.webp 1080w">
                 <img src="assets/img/hero-tesis.jpg" width="1080" height="1920" decoding="async"
                      alt="Kefkir Hayvancılık ve Adaklık tesisinde ışıklı boğa tabelası ve tabaklara paylanmış etler">
               </picture>
             </figure>
-            <figure class="slide" data-duration="5700" data-label="Ahırımız" aria-hidden="true">
-              <video muted playsinline loop preload="none" poster="assets/img/hero-ahir.jpg"
+            <figure class="slide" data-duration="5700" data-label="Ahırımız" aria-hidden="true" style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAYAA0DASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAgT/xAAgEAABBAIBBQAAAAAAAAAAAAABAAIDEQQhEhMiMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AF4Jhk5OkdT/AAfhSJqMrg0aB9KHi5kkcw5O7XHdrulzOm+g7SnZdU1KLVkgk2SUITCv/9k=')">
+              <video muted playsinline loop preload="none" data-poster="assets/img/hero-ahir-poster.webp"
                      data-src="assets/video/ahir.mp4" aria-label="Ahırımızdaki evlik kuzular"></video>
             </figure>
-            <figure class="slide" data-duration="6500" data-label="Paketleme" aria-hidden="true">
+            <figure class="slide" data-duration="6500" data-label="Paketleme" aria-hidden="true" style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAYAA0DASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIDBAUG/8QAIBAAAgICAgIDAAAAAAAAAAAAAQIDEQAEBRIhcRNRUv/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABoRAAICAwAAAAAAAAAAAAAAAAABAgMSITH/2gAMAwEAAhEDEQA/ANrTPyQRv+gDnNczG23yk3Sz0oZYi3p4dcRIxAUePWQBiHdyxtzZIF3gyNlUxSyrD3ZgKNe8RdzqzDXhLi/JP3hhlFJ9FZNx0j//2Q==')">
               <picture>
-                <source srcset="assets/img/hero-paket.webp" type="image/webp">
-                <img src="assets/img/hero-paket.jpg" width="1080" height="1920" loading="lazy" decoding="async"
+                <source type="image/avif" sizes="(min-width: 1024px) 304px, (min-width: 440px) 400px, calc(100vw - 40px)"
+                        data-srcset="assets/img/hero-paket-480.avif 480w, assets/img/hero-paket-720.avif 720w, assets/img/hero-paket-1080.avif 1080w">
+                <source type="image/webp" sizes="(min-width: 1024px) 304px, (min-width: 440px) 400px, calc(100vw - 40px)"
+                        data-srcset="assets/img/hero-paket-480.webp 480w, assets/img/hero-paket-720.webp 720w, assets/img/hero-paket-1080.webp 1080w">
+                <img data-src="assets/img/hero-paket.jpg" width="1080" height="1920" decoding="async"
                      alt="Kefkir etiketli, paketlenmiş et tabakları">
               </picture>
             </figure>
@@ -781,8 +795,8 @@
             <button type="button" role="tab" id="tab-tesis" aria-controls="video-tesis" aria-selected="false" tabindex="-1">Tesisimiz</button>
           </div>
 
-          <figure class="tour" id="video-hikaye" role="tabpanel" aria-labelledby="tab-hikaye">
-            <video playsinline preload="none" poster="hikayemiz-poster.jpg" src="hikayemiz.mp4"></video>
+          <figure class="tour" id="video-hikaye" role="tabpanel" aria-labelledby="tab-hikaye" style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAYAA4DASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFBv/EACEQAAEDBAIDAQAAAAAAAAAAAAEAAgMEERMhBVESFGEj/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIE/8QAGREBAAMBAQAAAAAAAAAAAAAAAQACERIh/9oADAMBAAIRAxEAPwCYYDHJku0NH3d1VAa+FrpTk+hZ/k5G1EuSIOsDsp3jqjFT/q8nehZZWmgsctikQpTZ7oXNB8u+1oOLpm+taSMAg6QhJdeck0PZ/9k=')">
+            <video playsinline preload="none" data-poster="assets/img/hikayemiz-poster.webp" src="assets/video/hikayemiz.mp4"></video>
             <button class="tour-overlay" type="button" aria-label="Levent Kefkir'in anlattığı hikâyemizi sesli oynat, 1 dakika 36 saniye">
               <span class="tour-play-icon"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
               <span class="tour-caption">Levent Kefkir hikâyemizi anlatıyor</span>
@@ -790,8 +804,8 @@
             </button>
           </figure>
 
-          <figure class="tour" id="video-tesis" role="tabpanel" aria-labelledby="tab-tesis" hidden>
-            <video playsinline preload="none" poster="assets/img/tanitim-poster.jpg" src="assets/video/tesis-tanitim.mp4"></video>
+          <figure class="tour" id="video-tesis" role="tabpanel" aria-labelledby="tab-tesis" hidden style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAYAA0DASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAD/8QAIBAAAgICAgIDAAAAAAAAAAAAAQIAAwQhBRESIhNBkf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABkRAAMBAQEAAAAAAAAAAAAAAAABAhESMf/aAAwDAQACEQMRAD8AbI+Dk8lr9VOPXcOvOK17NWoUaGtTbk2S658hLfJT69fUGvyir9IoAhP0aZ1G2dfUjhMe0NUB+mHW2jy77EpTfKJNPD//2Q==')">
+            <video playsinline preload="none" data-poster="assets/img/tanitim-poster.webp" src="assets/video/tesis-tanitim.mp4"></video>
             <button class="tour-overlay" type="button" aria-label="Tanıtım videosunu sesli oynat, 48 saniye">
               <span class="tour-play-icon"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
               <span class="tour-caption">Tesisimizi kısa bir videoda gezin</span>
@@ -845,9 +859,12 @@
         <!-- DÜZENLE: Ağırlık ve et miktarları radio butonlarındaki data-canli / data-et değerlerindedir. -->
         <div class="products">
           <article class="product card">
-            <div class="product-media">
+            <div class="product-media" style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPABgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQL/xAAfEAACAgICAwEAAAAAAAAAAAABAgMRAAQhQQUSE3H/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQT/xAAaEQADAAMBAAAAAAAAAAAAAAAAARECEiED/9oADAMBAAIRAxEAPwCNpa0TezSqStcfuZDArbcaW1Fu8f0FuAULHedRSRQ+SjX5W5PBOHXWFh7bZaQpDVh7QXhjO0oDggVYwyLqppbnD//Z')">
               <picture>
-                <source srcset="assets/img/kucukbas.webp" type="image/webp">
+                <source type="image/avif" sizes="(min-width: 1180px) 560px, (min-width: 860px) 46vw, calc(100vw - 40px)"
+                        srcset="assets/img/kucukbas-640.avif 640w, assets/img/kucukbas-960.avif 960w, assets/img/kucukbas-1280.avif 1280w">
+                <source type="image/webp" sizes="(min-width: 1180px) 560px, (min-width: 860px) 46vw, calc(100vw - 40px)"
+                        srcset="assets/img/kucukbas-640.webp 640w, assets/img/kucukbas-960.webp 960w, assets/img/kucukbas-1280.webp 1280w">
                 <img src="assets/img/kucukbas.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Levent Kefkir, beyaz bir kurbanlık koyunla">
               </picture>
               <span class="product-tag">Kendi hayvanlarımızdan</span>
@@ -1093,6 +1110,25 @@
       a.rel = 'noopener';
     });
 
+    /* ---------- Sonradan inen görseller ----------
+       Açılışta sadece ilk ekrandaki fotoğraflar iner. Diğerleri sırası gelince
+       data-srcset / data-src / data-poster'dan alınır. */
+    const hydrate = (root) => {
+      if (!root) return;
+      root.querySelectorAll('source[data-srcset]').forEach((el) => {
+        el.srcset = el.dataset.srcset;
+        el.removeAttribute('data-srcset');
+      });
+      root.querySelectorAll('img[data-src]').forEach((el) => {
+        el.src = el.dataset.src;
+        el.removeAttribute('data-src');
+      });
+      root.querySelectorAll('video[data-poster]').forEach((el) => {
+        el.poster = el.dataset.poster;
+        el.removeAttribute('data-poster');
+      });
+    };
+
     /* ---------- Üst menü: aşağı inince biraz daha koyu ---------- */
     const header = document.querySelector('.site-header');
     const hero = document.querySelector('.hero');
@@ -1153,6 +1189,13 @@
       if (p && p.catch) p.catch(() => {});
     };
 
+    // Sıradaki slaytı hazırla: görseli insin, kart ekrandaysa videosu da yüklensin
+    const warmNext = () => {
+      const n = (current + 1) % slides.length;
+      hydrate(slides[n]);
+      if (stageVisible) loadVideo(videoOf(n));
+    };
+
     const applyPause = () => {
       const paused = pausedBy.size > 0;
       hero.classList.toggle('is-paused', paused);
@@ -1167,6 +1210,7 @@
     const go = (index) => {
       const next = (index + slides.length) % slides.length;
       current = next;
+      hydrate(slides[next]);
       slides.forEach((s, k) => {
         const on = k === next;
         s.classList.toggle('is-active', on);
@@ -1194,7 +1238,7 @@
         if (k === next && !pausedBy.size && stageVisible) playVideo(v, true);
         else v.pause();
       });
-      if (pageLoaded) loadVideo(videoOf((next + 1) % slides.length));
+      if (pageLoaded) warmNext();
     };
 
     // Çubuk dolunca sonraki slayta geç
@@ -1261,12 +1305,16 @@
     document.addEventListener('visibilitychange', () => setPaused('hidden', document.hidden));
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(([entry]) => setPaused('offscreen', !entry.isIntersecting), { threshold: 0.1 }).observe(hero);
-      new IntersectionObserver(([entry]) => { stageVisible = entry.isIntersecting; applyPause(); }, { threshold: 0.25 }).observe(stage);
+      new IntersectionObserver(([entry]) => {
+        stageVisible = entry.isIntersecting;
+        applyPause();
+        if (stageVisible && pageLoaded) warmNext();
+      }, { threshold: 0.25 }).observe(stage);
     }
 
     addEventListener('load', () => {
       pageLoaded = true;
-      setTimeout(() => loadVideo(videoOf((current + 1) % slides.length)), 600);
+      setTimeout(warmNext, 300);
     });
 
     syncPauseBtn();
@@ -1278,6 +1326,7 @@
     document.querySelectorAll('.tour').forEach((tour) => {
       const tv = tour.querySelector('video');
       tour.querySelector('.tour-overlay').addEventListener('click', () => {
+        hydrate(tour);
         tour.classList.add('is-playing');
         tv.controls = true;
         const p = tv.play();
@@ -1286,6 +1335,20 @@
       });
       tv.addEventListener('ended', () => { tour.classList.remove('is-playing'); tv.controls = false; });
     });
+
+    // Kapak resimleri bölüme yaklaşınca insin, açılışı yavaşlatmasın
+    const aboutMedia = document.querySelector('.about-media');
+    const showPosters = () => document.querySelectorAll('.tour').forEach(hydrate);
+    const watchPosters = () => {
+      if (!('IntersectionObserver' in window) || !aboutMedia) { showPosters(); return; }
+      const posterIo = new IntersectionObserver((entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        posterIo.disconnect();
+        showPosters();
+      }, { rootMargin: '600px 0px' });
+      posterIo.observe(aboutMedia);
+    };
+    if (document.readyState === 'complete') watchPosters(); else addEventListener('load', watchPosters);
 
     // Hikâyemiz / Tesisimiz geçişi: açık olmayan video durur
     const videoTabs = [...document.querySelectorAll('.video-tabs [role="tab"]')];
