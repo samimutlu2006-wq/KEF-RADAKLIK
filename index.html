@@ -45,6 +45,7 @@
     "description": "Vekaletle adak ve kurban kesimi, kesim videosu, paketleme, adrese teslimat ve makbuzlu bağış.",
     "areaServed": "Kayseri",
     "telephone": "+905519464044",
+    "sameAs": ["https://www.instagram.com/leventkfkr1/"],
     "url": "https://samimutlu2006-wq.github.io/KEF-RADAKLIK/",
     "image": "https://samimutlu2006-wq.github.io/KEF-RADAKLIK/assets/img/og-kefkir.jpg"
   }
@@ -552,6 +553,10 @@
     .person .phone:hover { color: var(--red-text); }
     .person-actions { display: flex; gap: 8px; margin-top: 16px; }
     .person-actions .btn { flex: 1; min-height: 44px; padding: 0 .9em; font-size: .9375rem; }
+    .person-insta { width: 100%; min-height: 44px; margin-top: 8px; font-size: .9375rem; }
+    .person-insta .icon { color: var(--red-text); }
+    .person-insta { white-space: nowrap; }
+    @media (min-width: 560px) { .ig-word { display: none; } }   /* yan yana kartlarda sadece kullanıcı adı */
     .address-card { display: flex; gap: 14px; align-items: flex-start; }
     .address-card .icon { color: var(--red-text); margin-top: 2px; }
     .address-card address { font-style: normal; margin-top: 2px; }
@@ -638,6 +643,7 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.8v12.4a.8.8 0 0 0 1.2.7l10-6.2a.8.8 0 0 0 0-1.4l-10-6.2A.8.8 0 0 0 8 5.8z" fill="currentColor" stroke="none"/></symbol>
     <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.2" fill="currentColor" stroke="none"/><rect x="13.5" y="5" width="4" height="14" rx="1.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M9.4 4.5h5.2l1.6 2.5H19a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2.8z"/><circle cx="12" cy="13" r="3.4"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 1 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
@@ -1045,6 +1051,7 @@
                 <a class="btn btn-red" href="tel:+905519464044"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Ara</a>
                 <a class="btn btn-white" href="https://wa.me/905519464044" data-wa="Merhaba Levent Bey, adak ve kurban hakkında bilgi almak istiyorum." data-wa-number="905519464044"><svg class="icon icon-wa" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
               </div>
+              <a class="btn btn-ghost person-insta" href="https://www.instagram.com/leventkfkr1/" target="_blank" rel="noopener" aria-label="Instagram: @leventkfkr1"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><span class="ig-word">Instagram:&nbsp;</span>@leventkfkr1</a>
             </article>
             <div class="address-card card">
               <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
@@ -1083,9 +1090,10 @@
           <p class="footer-thanks">Bizi tercih ettiğiniz için teşekkür ederiz. Allah kurbanlarınızı kabul etsin.</p>
         </div>
         <div>
-          <h2>Telefon</h2>
+          <h2>İletişim</h2>
           <ul class="footer-list">
             <li><a href="tel:+905519464044">Levent Kefkir: 0551 946 40 44</a></li>
+            <li><a href="https://www.instagram.com/leventkfkr1/" target="_blank" rel="noopener">Instagram: @leventkfkr1</a></li>
           </ul>
         </div>
         <div>
