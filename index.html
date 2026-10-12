@@ -354,6 +354,13 @@
     .checks li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; }
     .checks .icon { width: 22px; height: 22px; color: var(--red-text); margin-top: 2px; stroke-width: 2.2; }
     .signature { margin-top: 28px; font-weight: 600; }
+    .about-photo { margin: 28px 0 0; }
+    .about-photo picture {
+      display: block; aspect-ratio: 5 / 4; overflow: hidden;
+      border-radius: var(--radius-lg); background: #222 50% 50% / cover no-repeat;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo figcaption { margin-top: 10px; font-size: .875rem; color: var(--muted); }
 
     .tour {
       position: relative; isolation: isolate;
@@ -776,6 +783,15 @@
         <div class="about-card card">
           <h2 class="h2" id="biz-kimiz-baslik">Biz Kimiz</h2>
           <p class="lead">Kefkir Hayvancılık ve Adaklık, yıllardır bu işi yapan bir aile işletmesi. Hayvanlarımızı kendi ahırımızda besliyoruz; kesim ve paketleme de kendi tesisimizde, kendi elimizle yapılıyor.</p>
+          <figure class="about-photo">
+            <picture style="background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAATABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECBQT/xAAiEAABBAICAQUAAAAAAAAAAAACAAEDEQQxBVESFCFBYXH/xAAXAQEAAwAAAAAAAAAAAAAAAAACAAED/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8A48aUMfkZHPRR0tDjyA8jyDVVXSyXLynkathvpXPJnxY4QjdqPraMhcxPNk/rxKO7Ftsi6jkFnf2v9RMElGAQEQizP2s2YW83L5Ybb6RFmcXAyEGp30iIot//2Q==')">
+              <source type="image/avif" sizes="(min-width: 1180px) 590px, (min-width: 900px) calc(100vw - 560px), calc(100vw - 96px)" srcset="assets/img/ekibimiz-640.avif 640w, assets/img/ekibimiz-960.avif 960w, assets/img/ekibimiz-1200.avif 1200w">
+              <source type="image/webp" sizes="(min-width: 1180px) 590px, (min-width: 900px) calc(100vw - 560px), calc(100vw - 96px)" srcset="assets/img/ekibimiz-640.webp 640w, assets/img/ekibimiz-960.webp 960w, assets/img/ekibimiz-1200.webp 1200w">
+              <img src="assets/img/ekibimiz-960.jpg" width="1200" height="960" loading="lazy" decoding="async"
+                   alt="Kesim gününde Kefkir ekibinden iki kişi, biri ayakta biri oturmuş, gülümsüyor">
+            </picture>
+            <figcaption>Kesim gününden bir kare.</figcaption>
+          </figure>
           <div class="about-text">
             <p>İşi başkasına devretmediğimiz için hangi hayvanı seçtiyseniz kesilen de o oluyor. Kesim, adınız okunarak İslami usullere uygun yapılıyor. Kesim alanı, tezgâhlar ve aletler her kesimden sonra baştan temizleniyor.</p>
             <p>Gelemeyenleri de düşünüyoruz. Kesimin videosunu, bağış yaptıysanız makbuzunu WhatsApp’tan gönderiyoruz. Böylece her adımda ne olduğunu bilirsiniz.</p>
