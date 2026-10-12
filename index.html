@@ -26,9 +26,9 @@
 
   <!-- En üstteki fotoğraf her şeyden önce inmeye başlasın -->
   <link rel="preload" as="image" type="image/avif" media="(max-width: 1023px)" fetchpriority="high"
-        imagesrcset="assets/img/vitrin-mobil-720.avif 720w, assets/img/vitrin-mobil-1080.avif 1080w, assets/img/vitrin-mobil-1200.avif 1200w, assets/img/vitrin-mobil-1600.avif 1600w" imagesizes="100vw">
+        imagesrcset="assets/img/vitrin-mobil-720.avif?v=2 720w, assets/img/vitrin-mobil-1080.avif?v=2 1080w, assets/img/vitrin-mobil-1200.avif?v=2 1200w, assets/img/vitrin-mobil-1600.avif?v=2 1600w" imagesizes="100vw">
   <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" fetchpriority="high"
-        imagesrcset="assets/img/vitrin-genis-1200.avif 1200w, assets/img/vitrin-genis-1600.avif 1600w, assets/img/vitrin-genis-2400.avif 2400w" imagesizes="100vw">
+        imagesrcset="assets/img/vitrin-genis-1200.avif?v=2 1200w, assets/img/vitrin-genis-1600.avif?v=2 1600w, assets/img/vitrin-genis-2400.avif?v=2 2400w" imagesizes="100vw">
   <!-- Yazı tipi sayfayı bekletmeden arkadan yüklenir -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +216,7 @@
       background: var(--bg); color: var(--text);
       overflow: hidden;
     }
-    .hero-photo { position: relative; aspect-ratio: 1080 / 939; background: #1a1a1a url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAVABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDAQL/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBREEIQZBEjGB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQIA/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERMf/aAAwDAQACEQMRAD8AmLnhUWW1rX/Z0Zqph8q1sBHvcrcvG8bl40rVVWlxHRI1MsPh6uNVYvKWuwk9e4bKeJ6+QM2tO431EuPj+CqkpRWCPrqI6zAuR0D1PAsZtgHURIUCxl9xERD/2Q==') 50% 50% / cover no-repeat; }
+    .hero-photo { position: relative; aspect-ratio: 1080 / 939; background: #1a1a1a url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAVABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBQT/xAAhEAABAwQCAwEAAAAAAAAAAAABAAIDBAURIRIxBhVBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAECAP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAwDAQACEQMRAD8AzvftiHGQyuP7lQ9zG5wfGJG4732tirttNV20tiijZMRokYVVns8VNFI2qbHISdfUXC4B5AXY4ukGdItt9voWtJZBGCOtImsoLyNA6UBI52QDhEUKBI5v1ERIf//Z') 50% 50% / cover no-repeat; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
     .hero-photo::after {
       content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -301,7 +301,7 @@
 
     @media (min-width: 1024px) {
       .hero { display: flex; align-items: flex-end; min-height: clamp(640px, 100vh, 1000px); }
-      .hero-photo { position: absolute; inset: calc(var(--header-h) + env(safe-area-inset-top)) 0 0 0; aspect-ratio: auto; background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPABgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAD/8QAHxAAAgEFAAMBAAAAAAAAAAAAAQIDAAQFESEGEkFh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwAxc8IiVlMr/u6hmomHtGsgI+7pi5xtve43UUMaykcbVZYjDR2sUi3SJIWPOUbKeDl8gdiNNIN8qp18fZopKQICBzlVOp//2Q=='); background-position: 50% 0%; }
+      .hero-photo { position: absolute; inset: calc(var(--header-h) + env(safe-area-inset-top)) 0 0 0; aspect-ratio: auto; background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABQACA//EACAQAAEDBAMBAQAAAAAAAAAAAAIAAQMEBREhEhUxBlH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAwDAQACEQMRAD8AN78Ym4yPKT/uVnuYyNjjaQce79TNTbaettuIoYxldtFhcrRZo6WKQaoAkcn1pFwj2+gI8cSkbOlJw7fRgLuEAM7NrSk1P//Z'); background-position: 50% 0%; }
       .hero-photo img { object-position: 50% 0%; }
       .hero-photo::after {
         background:
@@ -686,16 +686,16 @@
       <div class="hero-photo">
         <picture>
           <source media="(min-width: 1024px)" type="image/avif" sizes="100vw"
-                  srcset="assets/img/vitrin-genis-1200.avif 1200w, assets/img/vitrin-genis-1600.avif 1600w, assets/img/vitrin-genis-2400.avif 2400w">
+                  srcset="assets/img/vitrin-genis-1200.avif?v=2 1200w, assets/img/vitrin-genis-1600.avif?v=2 1600w, assets/img/vitrin-genis-2400.avif?v=2 2400w">
           <source media="(min-width: 1024px)" type="image/webp" sizes="100vw"
-                  srcset="assets/img/vitrin-genis-1200.webp 1200w, assets/img/vitrin-genis-1600.webp 1600w, assets/img/vitrin-genis-2400.webp 2400w">
+                  srcset="assets/img/vitrin-genis-1200.webp?v=2 1200w, assets/img/vitrin-genis-1600.webp?v=2 1600w, assets/img/vitrin-genis-2400.webp?v=2 2400w">
           <source media="(min-width: 1024px)" sizes="100vw"
-                  srcset="assets/img/vitrin-genis-1600.jpg 1600w, assets/img/vitrin-genis-2400.jpg 2400w">
+                  srcset="assets/img/vitrin-genis-1600.jpg?v=2 1600w, assets/img/vitrin-genis-2400.jpg?v=2 2400w">
           <source type="image/avif" sizes="100vw"
-                  srcset="assets/img/vitrin-mobil-720.avif 720w, assets/img/vitrin-mobil-1080.avif 1080w, assets/img/vitrin-mobil-1200.avif 1200w, assets/img/vitrin-mobil-1600.avif 1600w">
+                  srcset="assets/img/vitrin-mobil-720.avif?v=2 720w, assets/img/vitrin-mobil-1080.avif?v=2 1080w, assets/img/vitrin-mobil-1200.avif?v=2 1200w, assets/img/vitrin-mobil-1600.avif?v=2 1600w">
           <source type="image/webp" sizes="100vw"
-                  srcset="assets/img/vitrin-mobil-720.webp 720w, assets/img/vitrin-mobil-1080.webp 1080w, assets/img/vitrin-mobil-1200.webp 1200w, assets/img/vitrin-mobil-1600.webp 1600w">
-          <img src="assets/img/vitrin-mobil.jpg" width="1080" height="939" fetchpriority="high"
+                  srcset="assets/img/vitrin-mobil-720.webp?v=2 720w, assets/img/vitrin-mobil-1080.webp?v=2 1080w, assets/img/vitrin-mobil-1200.webp?v=2 1200w, assets/img/vitrin-mobil-1600.webp?v=2 1600w">
+          <img src="assets/img/vitrin-mobil.jpg?v=2" width="1080" height="939" fetchpriority="high"
                alt="Kayseri'de adak ve kurbanlık satışı yapılan dükkânın tabelası ve önü">
         </picture>
       </div>

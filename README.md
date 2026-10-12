@@ -46,6 +46,6 @@ Hero'daki her slayt üç parçadan oluşur: `.slides` içindeki bir `<figure cla
 
 ## Medya
 
-- En üstteki dükkân fotoğrafı, tesis, paket ve koyunlu fotoğraf ile videolar işletmenin kendi çekimleri. Dükkân tabelasından başka işletmenin adı, logosu ve telefonları silindi. Videolar web için küçültüldü, telefonun kaydettiği konum bilgileri silindi.
+- En üstteki dükkân fotoğrafı, tesis, paket ve koyunlu fotoğraf ile videolar işletmenin kendi çekimleri. Dükkân tabelasından başka işletmenin adı, logosu ve telefonları silindi; büyük yazının yerine LEVENT KEFKİR, sağdaki numara satırına da Levent Kefkir'in adı ve numarası yazıldı. Videolar web için küçültüldü, telefonun kaydettiği konum bilgileri silindi.
 - Biz Kimiz'deki "Hikâyemiz" videosu (`assets/video/hikayemiz.mp4`, 2 dk 10 sn): gönderildiği hâliyle kondu, yeniden sıkıştırılmadı. Sadece internette beklemeden başlaması için dosyanın iç düzeni değiştirildi. Videoyu değiştirirseniz `index.html` içindeki `hikayemiz.mp4?v=2` ve `hikayemiz-poster.webp?v=2` adreslerinde sayıyı bir artırın, ziyaretçinin tarayıcısında eskisi kalmasın.
 - Büyükbaş kartındaki fotoğraf: Unsplash (Haberdoedas), Unsplash lisansıyla.
