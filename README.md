@@ -47,6 +47,7 @@ GitHub'da **Settings → Pages** kısmında **Enforce HTTPS** işaretli olmalı.
 | Ağırlık / et miktarı | Seçenekler bölümündeki radio butonlarında `data-canli` ve `data-et` değerleri |
 | Büyükbaş fotoğrafı | Şu an Unsplash'ten yer tutucu. Kendi fotoğrafınızı `assets/img/` içine koyup `<img src=...>` adresini değiştirin. |
 | Renkler | `<style>` başındaki `--red` (kırmızı), `--bg` (siyah zemin) gibi değişkenler. WhatsApp butonları `--wa` ile WhatsApp yeşilinde. |
+| Buton köşeleri | `<style>` başındaki `--radius-btn` (şu an `8px`). Bütün butonlar bunu kullanıyor. |
 | En üstteki fotoğraf | `assets/img/vitrin-genis-*` (masaüstü) ve `vitrin-mobil-*` (telefon). Her fotoğrafın birkaç boyutu var (`-720`, `-1200` gibi), hem AVIF hem WebP. Telefon ekranına yeten en küçüğünü indirir. Değiştirirken aynı adlarla ve aynı boyutlarda kaydedin. |
 | WhatsApp önizleme görseli | `<head>` içindeki `og:image`. Şu an `https://xn--kayseriadaklk-sgb42iba.com/assets/img/og-kefkir.jpg` |
 
