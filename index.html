@@ -14,11 +14,12 @@
   <meta property="og:locale" content="tr_TR">
   <meta property="og:title" content="Kefkir Hayvancılık ve Adaklık">
   <meta property="og:description" content="Vekaletle adak ve kurban kesimi, kesim videosu, paketleme ve teslimat.">
-  <meta property="og:url" content="https://samimutlu2006-wq.github.io/KEF-RADAKLIK/">
-  <meta property="og:image" content="https://samimutlu2006-wq.github.io/KEF-RADAKLIK/assets/img/og-kefkir.jpg">
+  <meta property="og:url" content="https://xn--kayseriadaklk-sgb42iba.com/">
+  <meta property="og:image" content="https://xn--kayseriadaklk-sgb42iba.com/assets/img/og-kefkir.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://xn--kayseriadaklk-sgb42iba.com/">
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -45,9 +46,11 @@
     "description": "Vekaletle adak ve kurban kesimi, kesim videosu, paketleme, adrese teslimat ve makbuzlu bağış.",
     "areaServed": "Kayseri",
     "telephone": "+905519464044",
+    "address": {"@type": "PostalAddress", "streetAddress": "Battalgazi Mahallesi, Sarıyaprak Sokak No: 52", "addressLocality": "Kayseri", "addressCountry": "TR"},
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Battalgazi+Mahallesi+Sar%C4%B1yaprak+Sokak+No+52+Kayseri",
     "sameAs": ["https://www.instagram.com/leventkfkr1/"],
-    "url": "https://samimutlu2006-wq.github.io/KEF-RADAKLIK/",
-    "image": "https://samimutlu2006-wq.github.io/KEF-RADAKLIK/assets/img/og-kefkir.jpg"
+    "url": "https://xn--kayseriadaklk-sgb42iba.com/",
+    "image": "https://xn--kayseriadaklk-sgb42iba.com/assets/img/og-kefkir.jpg"
   }
   </script>
 
@@ -560,6 +563,8 @@
     .address-card { display: flex; gap: 14px; align-items: flex-start; }
     .address-card .icon { color: var(--red-text); margin-top: 2px; }
     .address-card address { font-style: normal; margin-top: 2px; }
+    .address-link { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--red-text); text-decoration: none; }
+    .address-link:hover { text-decoration: underline; }
 
     .map-card { position: relative; min-height: 360px; border-radius: var(--radius-xl); overflow: hidden; background: #141414; border: 1px solid var(--card-line); }
     .map-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -1058,21 +1063,18 @@
               <div>
                 <h3>Adres</h3>
                 <!-- DÜZENLE: açık adres -->
-                <address>Adres bilgisi eklenecek.</address>
+                <address>Battalgazi Mahallesi<br>Sarıyaprak Sokak No:&nbsp;52<br>Kayseri</address>
+                <a class="address-link" href="https://www.google.com/maps/search/?api=1&amp;query=Battalgazi+Mahallesi+Sar%C4%B1yaprak+Sokak+No+52+Kayseri" target="_blank" rel="noopener">Yol tarifi al</a>
               </div>
             </div>
           </div>
         </div>
 
         <div class="map-card" id="harita">
-          <!-- DÜZENLE (HARİTA): Google Haritalar'da işletmeyi bulun > Paylaş > "Harita yerleştir" > HTML'yi kopyala.
-               Kopyaladığınız <iframe ...></iframe> kodunu bu satırın altına yapıştırın
-               ve aşağıdaki <div class="map-placeholder"> bloğunu silin. -->
-          <div class="map-placeholder">
-            <span class="map-pin"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <strong>Harita alanı</strong>
-            <span>Google Haritalar konumu buraya eklenecek.</span>
-          </div>
+          <!-- DÜZENLE (HARİTA): Harita adresle aranarak gösteriliyor. İğneyi tam dükkânın üstüne koymak için
+               Google Haritalar'da işletmeyi bulun > Paylaş > "Harita yerleştir" > HTML'yi kopyalayıp aşağıdaki iframe'in yerine yapıştırın. -->
+          <iframe src="https://maps.google.com/maps?q=Battalgazi%20Mahallesi%2C%20Sar%C4%B1yaprak%20Sokak%20No%3A%2052%2C%20Kayseri&amp;z=16&amp;output=embed" title="Kefkir Hayvancılık ve Adaklık konumu: Battalgazi Mahallesi, Sarıyaprak Sokak No: 52, Kayseri"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -1094,6 +1096,7 @@
           <ul class="footer-list">
             <li><a href="tel:+905519464044">Levent Kefkir: 0551 946 40 44</a></li>
             <li><a href="https://www.instagram.com/leventkfkr1/" target="_blank" rel="noopener">Instagram: @leventkfkr1</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Battalgazi+Mahallesi+Sar%C4%B1yaprak+Sokak+No+52+Kayseri" target="_blank" rel="noopener">Battalgazi Mah. Sarıyaprak Sk. No:&nbsp;52, Kayseri</a></li>
           </ul>
         </div>
         <div>

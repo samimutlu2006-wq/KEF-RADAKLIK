@@ -18,6 +18,22 @@ assets/video/       ahır videosu (hero), hikâye videosu ve tesis tanıtım vid
 
 Kendi alan adınızı bağlamak isterseniz **Settings → Pages → Custom domain** kısmına yazmanız yeterli.
 
+## Alan adı
+
+Site **kayseriadakçılık.com** adresinde. Bilgisayarlar Türkçe harfli adları `xn--kayseriadaklk-sgb42iba.com` diye yazar (punycode). `CNAME` dosyasında ve sayfadaki tam adreslerde bu hâli kullanılıyor, ikisi aynı adres.
+
+Alan adı firmasındaki DNS kayıtları:
+
+| Ad | Tür | Değer |
+| --- | --- | --- |
+| @ | A | 185.199.108.153 |
+| @ | A | 185.199.109.153 |
+| @ | A | 185.199.110.153 |
+| @ | A | 185.199.111.153 |
+| www | CNAME | samimutlu2006-wq.github.io |
+
+GitHub'da **Settings → Pages** kısmında **Enforce HTTPS** işaretli olmalı. Eski github.io adresi kendiliğinden yeni adrese gider. Alan adının yıllık yenilemesini kaçırmayın, kaçarsa site kapanır.
+
 ## Değiştirmeniz gereken yerler
 
 `index.html` içinde `DÜZENLE` diye aratırsanız hepsini bulursunuz.
@@ -27,12 +43,12 @@ Kendi alan adınızı bağlamak isterseniz **Settings → Pages → Custom domai
 | WhatsApp numarası | Dosyanın sonundaki `<script>` içinde `WHATSAPP_NUMARASI` (ülke koduyla, `+` olmadan: `905519464044`) |
 | Telefonlar | `tel:+90...` geçen satırlar ve görünen numaralar |
 | Adres | İletişim bölümündeki `<address>` etiketi |
-| Harita | Google Haritalar → işletme → Paylaş → **Harita yerleştir** → HTML'yi kopyala. Kodu `id="harita"` olan kutunun içine yapıştırın, altındaki `map-placeholder` bloğunu silin. |
+| Harita | Şu an adresle aranarak gösteriliyor. İğneyi tam dükkânın üstüne koymak için Google Haritalar → işletme → Paylaş → **Harita yerleştir** → HTML'yi kopyalayıp `id="harita"` kutusundaki `<iframe>` ile değiştirin. |
 | Ağırlık / et miktarı | Seçenekler bölümündeki radio butonlarında `data-canli` ve `data-et` değerleri |
 | Büyükbaş fotoğrafı | Şu an Unsplash'ten yer tutucu. Kendi fotoğrafınızı `assets/img/` içine koyup `<img src=...>` adresini değiştirin. |
 | Renkler | `<style>` başındaki `--red` (kırmızı), `--bg` (siyah zemin) gibi değişkenler. WhatsApp butonları `--wa` ile WhatsApp yeşilinde. |
 | En üstteki fotoğraf | `assets/img/vitrin-genis-*` (masaüstü) ve `vitrin-mobil-*` (telefon). Her fotoğrafın birkaç boyutu var (`-720`, `-1200` gibi), hem AVIF hem WebP. Telefon ekranına yeten en küçüğünü indirir. Değiştirirken aynı adlarla ve aynı boyutlarda kaydedin. |
-| WhatsApp önizleme görseli | `<head>` içindeki `og:image`. Site yayına girince tam adresle yazın: `https://KULLANICIADI.github.io/kefkir/assets/img/og-kefkir.jpg` |
+| WhatsApp önizleme görseli | `<head>` içindeki `og:image`. Şu an `https://xn--kayseriadaklk-sgb42iba.com/assets/img/og-kefkir.jpg` |
 
 ## Slayt eklemek
 
